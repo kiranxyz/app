@@ -1,0 +1,52 @@
+<table *ngIf="shouldShowTable()" mat-table [dataSource]="users" class="mat-elevation-z3">
+  <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="newsletter">
+      <th mat-header-cell *matHeaderCellDef class="text-center">Newsletter</th>
+      <td mat-cell *matCellDef="let element" class="text-center">
+          <mat-icon color="primary" *ngIf="element.newsletter">done</mat-icon>
+          <mat-icon color="accent" *ngIf="!element.newsletter">clear</mat-icon>
+      </td>
+  </ng-container>
+
+  <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Created At</th>
+      <td mat-cell *matCellDef="let element">
+        {{ (element.createdAt !== null) ? (element.createdAt | date) : "&ndash;" }}
+      </td>
+  </ng-container>
+
+  <ng-container matColumnDef="lastModifiedAt">
+      <th mat-header-cell *matHeaderCellDef>Modified At</th>
+      <td mat-cell *matCellDef="let element">
+        {{ (element.lastModifiedAt !== null) ? (element.lastModifiedAt | date) : "&ndash;" }}
+      </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef class="text-center">Delete</th>
+    <td mat-cell *matCellDef="let element" class="text-center">
+      <a (click)="onDeleteUserClick(element)"><mat-icon>delete_outline</mat-icon></a>
+    </td>
+</ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-card *ngIf="!shouldShowTable()">
+  <p>No data received!</p>
+</mat-card>

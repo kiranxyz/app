@@ -1,0 +1,21 @@
+@function em($px, $context: 16) {
+	@return ($px / $context) * 1em;
+}
+
+@mixin smaller($px) {
+	@media only screen and (max-width: em($px)) {
+		@content;
+	}
+}
+
+@mixin greater($px) {
+	@media only screen and (min-width: em($px + 1)) {
+		@content;
+	}
+}
+
+@mixin sharptext() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+}

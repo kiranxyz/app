@@ -1,0 +1,40 @@
+<form name="createUserForm" [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+  <fieldset class='form-group'>
+    <dl fxLayout='column' fxLayoutGap='1rem'>
+      <dd>
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input type="text" formControlName="firstName" matInput required />
+          <mat-error *ngIf="firstName.hasError('required')">First name is required.</mat-error>
+        </mat-form-field>
+      </dd>
+
+      <dd>
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input type="text" formControlName="lastName" matInput required />
+          <mat-error *ngIf="lastName.hasError('required')">Last name is required.</mat-error>
+        </mat-form-field>
+      </dd>
+
+      <dd>
+        <mat-form-field appearance="fill">
+          <mat-label>Email Address</mat-label>
+          <input type="email" formControlName="email" matInput required />
+          <mat-error *ngIf="email.hasError('required')">Email is required.</mat-error>
+          <mat-error *ngIf="email.hasError('pattern')">Please enter a valid email.</mat-error>
+        </mat-form-field>
+      </dd>
+
+      <dd>
+        <mat-checkbox formControlName="newsletter">
+          Signup for our newsletter.
+        </mat-checkbox>
+      </dd>
+
+      <dd>
+        <button mat-stroked-button color="accent" type="submit">Submit</button>
+      </dd>
+    </dl>
+  </fieldset>
+</form>

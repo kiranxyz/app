@@ -1,0 +1,52 @@
+@import './variables';
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+main, section, aside, subline, subhead, header, footer {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif !important;
+	font-weight: bold;
+}
+
+button {
+	cursor: pointer;
+	background: none;
+	border: none;
+}
+
+input, button, textarea {
+	font-size: 1em;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a,
+a:hover,
+a:visited,
+a:focus {
+  cursor: pointer;
+  text-decoration: none;
+  &.underline {
+    text-decoration: underline;
+  }
+}

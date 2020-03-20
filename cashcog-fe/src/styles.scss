@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./styles/fonts";
+@import "./styles/variables";
+@import "./styles/base";
+
+// Material styling
+@import "./styles/theme";
+@import "./styles/fonts";
+@import "./styles/material-overrides.scss";

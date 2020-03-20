@@ -1,0 +1,110 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$cashcog-primary: (
+    50 : #f8eefd,
+    100 : #edd4fa,
+    200 : #e2b8f6,
+    300 : #d69cf2,
+    400 : #cd86f0,
+    500 : #c471ed,
+    600 : #be69eb,
+    700 : #b65ee8,
+    800 : #af54e5,
+    900 : #a242e0,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #eaccff,
+    A700 : #dfb2ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$cashcog-secondary: (
+    50 : #e3f8fc,
+    100 : #b8edf8,
+    200 : #89e1f4,
+    300 : #59d4f0,
+    400 : #36cbec,
+    500 : #12c2e9,
+    600 : #10bce6,
+    700 : #0db4e3,
+    800 : #0aacdf,
+    900 : #059fd9,
+    A100 : #ffffff,
+    A200 : #cff0ff,
+    A400 : #9ce0ff,
+    A700 : #82d9ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$cashcog-warn: (
+    50 : #feeaeb,
+    100 : #fccacd,
+    200 : #fba7ac,
+    300 : #f9848b,
+    400 : #f76972,
+    500 : #f64f59,
+    600 : #f54851,
+    700 : #f33f48,
+    800 : #f2363e,
+    900 : #ef262e,
+    A100 : #ffffff,
+    A200 : #fff7f8,
+    A400 : #ffc4c6,
+    A700 : #ffabae,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$primary: mat-palette($cashcog-primary);
+$secondary: mat-palette($cashcog-secondary);
+$warn: mat-palette($cashcog-warn);
+
+$theme: mat-light-theme($primary, $secondary, $warn);
+
+@include angular-material-theme($theme);

@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+
+@font-face {
+	font-family: 'Lato';
+	src: url('/assets/fonts/lato-bold-webfont.woff') format('woff'),
+	     url('/assets/fonts/lato-bold-webfont.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/assets/fonts/lato-regular-webfont.woff') format('woff'),
+       url('/assets/fonts/lato-regular-webfont.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Raleway';
+    src: url('/assets/fonts/raleway-medium-webfont.woff') format('woff'),
+         url('/assets/fonts/raleway-medium-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('/assets/fonts/raleway-extrabold-webfont.woff') format('woff'),
+         url('/assets/fonts/raleway-extrabold-webfont.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+$cashcog-typography: mat-typography-config(
+  $font-family: 'Raleway, monospace',
+  $headline: mat-typography-level(2rem, 3rem, 800),
+  $body-1: mat-typography-level(0.82rem, 1.5rem, 400)
+);
+
+@include mat-core($cashcog-typography);

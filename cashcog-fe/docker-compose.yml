@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  webapp:
+    build: .
+    image: cashcog_fe
+    user: root
+    volumes:
+      - ".:/opt/app"
+    ports:
+      - "80:80"

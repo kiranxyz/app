@@ -1,0 +1,24 @@
+@import './variables';
+
+.mat-stroked-button {
+  text-transform: uppercase;
+  border: 0.25rem solid !important;
+  border-radius: 0 !important;
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  &.mat-accent:hover {
+    span {
+      color: white !important;
+    }
+    background-color: mat-color($secondary) !important;
+  }
+}
+
+.mat-card {
+  border-radius: 0em !important;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 0em !important;
+}

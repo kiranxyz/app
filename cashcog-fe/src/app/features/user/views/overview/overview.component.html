@@ -1,0 +1,17 @@
+<ng-container *ngIf='userResult$ | async as users'>
+  <div fxLayoutAlign="space-around start">
+      <div fxFlex="80">
+        <div fxLayoutAlign="row" fxLayoutAlign="space-between start">
+          <h1>User Overview</h1>
+          <div>
+            <button mat-stroked-button color="accent"
+              (click)="createUserButtonClick()"
+            >
+              Create User
+            </button>
+          </div>
+        </div>
+        <user-table class="table" [users]="users.data.users" (onClick)="deleteUser($event)"></user-table>
+      </div>
+  </div>
+</ng-container>

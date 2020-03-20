@@ -1,0 +1,25 @@
+version: '3.2'
+
+services:
+  app:
+    build: .
+    image: cashcog_be
+    user: root
+    volumes:
+      - ".:/opt/app"
+    depends_on:
+      - migration
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+  migration:
+    build: .
+    image: cashcog_be
+    command: python run.py run-migrations
+    volumes:
+      - ".:/opt/app"
+    depends_on:
+      - db
+    env_file:
+      - .env
